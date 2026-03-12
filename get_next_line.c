@@ -6,7 +6,7 @@
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:57 by etasci            #+#    #+#             */
-/*   Updated: 2026/03/12 23:30:21 by etasci           ###   ########.fr       */
+/*   Updated: 2026/03/13 00:01:32 by etasci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ static char	*ft_read_and_stash(int fd, char *stash)
 	buffer[read_bytes] = '\0';
 	return (stash);
 }
-
-
-
-
-
-int	main(void)
+static char *extract_line(char *stash)
 {
-	int		fd;
-	char	*stash;
+	int	iİ
+	char	*line;
 
-	stash = NULL;
-	fd = open("test.txt", O_RDONLY);
-	stash = ft_read_and_stash(fd, stash);
-	printf("stash: %s\n", stash);
-	free(stash);
-	close(fd);
+	if(!stash || stash[0] == '\0')
+		return(NULL);
+	i = 0;
+	while(stash[i] && stash[0] == '\0')
 }
+
+
+
+
+
+
+

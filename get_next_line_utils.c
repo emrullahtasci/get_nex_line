@@ -6,7 +6,7 @@
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:54 by etasci            #+#    #+#             */
-/*   Updated: 2026/03/12 23:24:04 by etasci           ###   ########.fr       */
+/*   Updated: 2026/03/12 23:53:55 by etasci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ size_t	ft_strlen(const char *s)
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (!s)
+		return (NULL);
 	while (*s)
 	{
 		if ((unsigned char)*s == (unsigned char)c)
@@ -43,8 +45,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
-	if (!s1 || !s2)
+	if (!s2)
 		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
 	p = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!p)
 		return (NULL);
@@ -63,6 +67,25 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	p[i + j] = '\0';
 	return (p);
 }
+
+char	*ft_strdup(const char *s)
+{
+	char	*p;
+	size_t	i;
+
+	p = malloc(ft_strlen(s) + 1);
+	if (!p)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		p[i] = s[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
