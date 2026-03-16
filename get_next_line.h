@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:22 by etasci            #+#    #+#             */
-/*   Updated: 2026/03/12 23:22:10 by etasci           ###   ########.fr       */
+/*   Updated: 2026/03/13 17:34:22 by emrullah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 char    *get_next_line(int fd);
 char    *read_to_stash(int fd, char *stash);
-char    *extract_line(char *stash);
+static char *extract_line(char *stash);
 char    *clean_stash(char *stash);
 
 
