@@ -1,6 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/18 02:26:11 by etasci            #+#    #+#             */
+/*   Updated: 2026/03/18 03:07:01 by etasci           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
@@ -10,15 +22,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
+	i = 0;
 	if (!s)
 		return (0);
-	i = 0;
 	while (s[i])
 		i++;
 	return (i);
@@ -41,8 +53,8 @@ char	*ft_strchr(const char *s, int c)
 
 char	*ft_strdup(const char *s)
 {
-	char	*p;
 	size_t	i;
+	char	*p;
 
 	if (!s)
 		return (NULL);

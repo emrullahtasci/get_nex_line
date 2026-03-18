@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/18 02:29:39 by etasci            #+#    #+#             */
+/*   Updated: 2026/03/18 03:01:40 by etasci           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:57 by etasci            #+#    #+#             */
-/*   Updated: 2026/03/18 02:47:24 by etasci           ###   ########.fr       */
+/*   Updated: 2026/03/18 02:46:16 by etasci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*ft_read_and_stash(int fd, char *stash)
 {
@@ -48,7 +60,6 @@ static char	*ft_read_and_stash(int fd, char *stash)
 static char	*extract_line(char *stash)
 {
 	int		i;
-	int		j;
 	char	*line;
 
 	if (!stash || stash[0] == '\0')
@@ -58,16 +69,7 @@ static char	*extract_line(char *stash)
 		i++;
 	if (stash[i] == '\n')
 		i++;
-	line = malloc(i + 1);
-	if (!line)
-		return (NULL);
-	j = 0;
-	while (j < i)
-	{
-		line[j] = stash[j];
-		j++;
-	}
-	line[j] = '\0';
+	line = ft_substr(stash, 0, i);
 	return (line);
 }
 
@@ -88,17 +90,15 @@ static char	*clean_stash(char *stash)
 	}
 	new_stash = ft_substr(stash, i + 1, ft_strlen(stash) - i - 1);
 	free(stash);
-	if (!new_stash)
-		return (NULL);
 	return (new_stash);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*stash;
+	static char	*stash[FD_MAX];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= FD_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash[fd] = ft_read_and_stash(fd, stash[fd]);
 	if (!stash[fd])
