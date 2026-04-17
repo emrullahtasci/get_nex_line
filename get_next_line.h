@@ -6,7 +6,7 @@
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:22 by etasci            #+#    #+#             */
-/*   Updated: 2026/03/18 02:29:21 by etasci           ###   ########.fr       */
+/*   Updated: 2026/03/23 20:51:43 by etasci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 44
+#  define BUFFER_SIZE 3
 # endif
 
 char	*get_next_line(int fd);
