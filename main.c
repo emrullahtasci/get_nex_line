@@ -7,9 +7,8 @@ int	main(void)
 	int		fd;
 	char	*line;
 
-	fd = open("test.txt", O_RDONLY);
-	if (fd == -1)
-		return (1);
+	fd = open("test.txt",  O_CREAT | O_RDONLY , 0777);
+
 
 	while (1)
 	{
@@ -19,6 +18,6 @@ int	main(void)
 		printf("%s", line);
 		free(line);
 	}
-	close(fd);
+
 	return (0);
 }
