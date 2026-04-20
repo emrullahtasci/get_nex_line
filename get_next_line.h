@@ -6,7 +6,7 @@
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:22 by etasci            #+#    #+#             */
-/*   Updated: 2026/03/23 20:51:43 by etasci           ###   ########.fr       */
+/*   Updated: 2026/04/19 22:15:21 by etasci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 3
+#  define BUFFER_SIZE 42
 # endif
 
 char	*get_next_line(int fd);
-
-size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char *s1, char *s2);
+size_t	ft_strlen(const char *s);
+char	*ft_substr(char *s, unsigned int start, size_t len);
 
 #endif
