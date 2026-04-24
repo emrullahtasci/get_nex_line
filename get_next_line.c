@@ -6,11 +6,12 @@
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:57 by etasci            #+#    #+#             */
-/*   Updated: 2026/04/21 22:33:36 by etasci           ###   ########.fr       */
+/*   Updated: 2026/04/24 14:45:40 by etasci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdlib.h>
 
 static char	*extract_line(char *stash)
 {

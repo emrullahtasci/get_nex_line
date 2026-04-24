@@ -11,7 +11,7 @@ get_next_line is a C function that reads a file line by line.
 
 ---
 
-## 📂 Project Content
+## Instructions
 
 ### Files to Submit
 - get_next_line.c
@@ -31,7 +31,7 @@ get_next_line is a C function that reads a file line by line.
 
 Compile with a defined BUFFER_SIZE:
 
-cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 main.c get_next_line.c get_next_line_utils.c
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c
 
 ---
 

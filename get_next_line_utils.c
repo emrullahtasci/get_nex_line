@@ -6,11 +6,12 @@
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:54 by etasci            #+#    #+#             */
-/*   Updated: 2026/04/21 17:04:43 by etasci           ###   ########.fr       */
+/*   Updated: 2026/04/24 12:36:21 by etasci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdlib.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -42,27 +43,25 @@ char	*ft_strchr(const char *s, int c)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
-	size_t	i;
-	size_t	j;
+	char	*ptr;
+	int		alloced;
+	char	empty;
 
-	if (!s1)
-	{
-		s1 = malloc(1 * sizeof(char));
-		s1[0] = '\0';
-	}
-	if (!s1 || !s2)
+	empty = '\0';
+	alloced = !s1;
+	if (!s2)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
-	if (str == NULL)
+	if (alloced)
+		s1 = &empty;
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
 		return (NULL);
-	i = -1;
-	j = 0;
-	if (s1)
-		while (s1[++i])
-			str[i] = s1[i];
-	while (s2[j])
-		str[i++] = s2[j++];
-	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	ptr = str;
+	while (*s1)
+		*ptr++ = *s1++;
+	while (*s2)
+		*ptr++ = *s2++;
+	*ptr = '\0';
 	return (str);
 }
 

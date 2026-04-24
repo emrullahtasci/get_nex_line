@@ -6,14 +6,13 @@
 /*   By: etasci <etasci@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 23:02:22 by etasci            #+#    #+#             */
-/*   Updated: 2026/04/19 22:15:21 by etasci           ###   ########.fr       */
+/*   Updated: 2026/04/22 14:51:38 by etasci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdlib.h>
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
